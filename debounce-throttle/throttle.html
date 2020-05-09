@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节流</title>
+  <style>
+    #box {
+      width: 100%;
+      height: 100px;
+      border: 1px solid #aaa;
+    }
+
+    #box2 {
+      margin-top: 10px;
+      width: 100%;
+      height: 100px;
+      border: 1px solid rgba(55, 219, 22, 0.815);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <div id="box2"></div>
+  <script>
+    var count = 0
+    // 非立即执行
+    const box = document.getElementById('box')
+    const box2 = document.getElementById('box2')
+    function throttle(fn, wait) {
+      var timeout
+      // var previous = 0
+      return function () {
+        let self = this
+        let args = arguments
+        if (!timeout) {
+          timeout = setTimeout(function(){
+            timeout = null
+            fn.apply(self, args)
+          }, wait)
+        }
+      }
+    }
+    function addCount () {
+      box.innerHTML = count++
+    }
+    box.onmousemove = throttle(addCount, 1000)
+  </script>
+</body>
+
+</html>
