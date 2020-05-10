@@ -42,7 +42,7 @@ export default {
 }
 /* this rule will be remove */
 page {
-  background: none;
+  background: rgb(247, 240, 240);
   height: 100%;
 }
 button{

@@ -7,7 +7,10 @@
     "pages/category/main",
     "pages/my/main",
     "pages/topic/main",
-    "pages/mappage/main"
+    "pages/mappage/main",
+    "pages/brandlist/main",
+    "pages/newgoods/main",
+    "pages/topicdetail/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
