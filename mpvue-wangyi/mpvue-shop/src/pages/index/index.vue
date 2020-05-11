@@ -3,7 +3,7 @@
     <!-- 头部搜索 -->
     <div class="search">
       <div @click="toMappage">{{cityName}}</div>
-      <div>
+      <div @click="toSearch">
         <input type="text" placeholder="搜索商品" />
         <span class="icon"></span>
       </div>
@@ -18,7 +18,7 @@
       </swiper>
     </div>
     <div class="channel">
-      <div v-for="(item, index) in channel" :key="index" @click="categroyList(item.id)">
+      <div v-for="(item, index) in channel" :key="index" @click="categoryList(item.id)">
         <img :src="item.icon_url" alt="">
         <p>{{item.name}}</p>
       </div>
@@ -192,8 +192,8 @@ export default {
         }
       })
     },
-    categroyList(id) {
-      wx.navigateTo({ url: "/pages/categroylist/main?id" + id });
+    categoryList(id) {
+      wx.navigateTo({ url: "/pages/categorylist/main?id" + id });
     },
     branddetail(id) {
       wx.navigateTo({ url: "/pages/branddetail/main?id" + id });
@@ -210,6 +210,10 @@ export default {
     },
     topicdetail(id) {
       wx.navigateTo({ url: "/pages/topicdetail/main?id=" + id });
+    },
+    toSearch() {
+      console.log('页面将跳去search')
+      wx.navigateTo({ url: "/pages/search/main" });
     },
     async getData() {
       const data = await get('/index/index')
