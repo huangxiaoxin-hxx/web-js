@@ -16,4 +16,12 @@ router.get('/search/helperaction', controllers.search.index.helperAction) // 搜
 // 商品详情
 router.get('/goods/detailaction', controllers.goods.index.detailAction)
 
+// 收藏相关
+router.post('/collect/addcollect', controllers.collect.index.addCollect)
+
+// 订单相关
+router.post('/order/submitAction', controllers.order.index.submitAction)
+
+// 购物车相关的接口
+router.post('/cart/addCart', controllers.cart.index.addCart)
 module.exports = router
