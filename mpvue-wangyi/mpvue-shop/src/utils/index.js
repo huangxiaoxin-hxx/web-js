@@ -59,6 +59,12 @@ export function post (url, data) {
   return request(url, 'POST', data)
 }
 
+export function getStorageOpenid() {
+  const openId = wx.getStorageSync('openId');
+  if(openId) return openId
+  else return ''
+}
+
 export default {
   formatNumber,
   formatTime
