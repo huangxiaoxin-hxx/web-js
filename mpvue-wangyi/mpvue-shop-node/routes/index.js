@@ -15,6 +15,7 @@ router.get('/search/helperaction', controllers.search.index.helperAction) // 搜
 
 // 商品详情
 router.get('/goods/detailaction', controllers.goods.index.detailAction)
+router.get('/goods/goodsList', controllers.goods.index.goodsList)
 
 // 收藏相关
 router.post('/collect/addcollect', controllers.collect.index.addCollect)
@@ -31,5 +32,8 @@ router.get('/cart/cartlist', controllers.cart.index.cartList)
 router.get('/address/getListAction', controllers.address.index.getListAction)
 router.get('/address/detailAction', controllers.address.index.detailAction)
 router.post('/address/saveAction', controllers.address.index.saveAction)
+
+// 分类相关的接口
+router.get('/category/categoryNav', controllers.category.index.categoryNav)
 
 module.exports = router

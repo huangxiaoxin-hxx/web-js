@@ -193,10 +193,10 @@ export default {
       })
     },
     categoryList(id) {
-      wx.navigateTo({ url: "/pages/categorylist/main?id" + id });
+      wx.navigateTo({ url: "/pages/categorylist/main?id=" + id });
     },
     branddetail(id) {
-      wx.navigateTo({ url: "/pages/branddetail/main?id" + id });
+      wx.navigateTo({ url: "/pages/branddetail/main?id=" + id });
     },
     tobrandList() {
       wx.navigateTo({ url: "/pages/brandlist/main" });
@@ -225,7 +225,9 @@ export default {
       this.hotGoods = data.hotGoods
       this.topicList = data.topicList
       this.newCategoryList = data.newCategoryList
+      console.log(this.channel)
     }
+    
   }
 };
 </script>

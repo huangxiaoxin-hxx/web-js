@@ -62,6 +62,21 @@ async function detailAction(ctx) {
   }
 }
 
+// 商品分类列表
+async function goodsList(ctx) {
+  const categoryId = ctx.query.categoryId
+  let goodsList = []
+  if(categoryId) {
+    goodsList = await mysql('nideshop_goods').where({
+      'category_id': categoryId
+    }).select()
+    const currentNav = await mysql('nideshop_category').where({
+      'id': categoryId
+    })
+  }
+}
+
 module.exports = {
-  detailAction
+  detailAction,
+  goodsList
 }
