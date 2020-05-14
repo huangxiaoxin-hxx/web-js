@@ -58,11 +58,27 @@ export function get (url, data) {
 export function post (url, data) {
   return request(url, 'POST', data)
 }
-
+// 获取用户id
 export function getStorageOpenid() {
   const openId = wx.getStorageSync('openId');
   if(openId) return openId
   else return ''
+}
+// 判断用户是否登录了小程序
+export function login() {
+  const userInfo = wx.getStorageSync('userInfo');
+  if (userInfo) {
+    return userInfo
+  }
+}
+
+export function toLogin () {
+  const userInfo = wx.getStorageSync('userInfo');
+  if (!userInfo) {
+    return wx.navigateTo({ url: '/pages/login/main' });
+  } else {
+    return true
+  }
 }
 
 export default {
