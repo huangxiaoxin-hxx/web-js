@@ -39,6 +39,17 @@ async function addCart(ctx) {
   }
 }
 
+// 获取购物车列表
+async function cartList(ctx) {
+  const openId = ctx.query.openId
+  const cartlist = await mysql('nideshop_cart').where({
+    'user_id': openId
+  }).select()
+  ctx.body = {
+    data: cartlist
+  }
+}
 module.exports = {
-  addCart
+  addCart,
+  cartList
 }

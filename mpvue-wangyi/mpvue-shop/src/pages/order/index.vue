@@ -81,6 +81,7 @@ export default {
     console.log('id',this.addressId)
     this.openId = getStorageOpenid();
     this.getDetail();
+    this.allprice = ''
   },
   methods: {
     toAdd() {
@@ -96,13 +97,13 @@ export default {
       });
       console.log(data)
       if(data) {
-        // this.allprice = data.price,
-        this.listData = data.goodsList,
+        // this.allprice = data.price
+        this.listData = data.goodsList
         this.address = data.address
       }
       console.log(data)
       this.listData.map((item) => {
-        this.allprice +=item.retail_price * item.number
+        this.allprice = Number(item.retail_price * item.number) + Number(this.allprice)
       })
     },
     pay() {
