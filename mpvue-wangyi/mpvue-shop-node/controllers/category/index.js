@@ -4,7 +4,7 @@ const { mysql } = require('../../mysql')
 async function categoryNav (ctx) {
   const categoryId = ctx.query.categoryId
   console.log(categoryId)
-  // 获取分类
+  // 获取当前分类
   const currentNav = await mysql('nideshop_category').where({
     'id': categoryId
   }).select()

@@ -36,4 +36,8 @@ router.post('/address/saveAction', controllers.address.index.saveAction)
 // 分类相关的接口
 router.get('/category/categoryNav', controllers.category.index.categoryNav)
 
+// 专题接口
+router.get('/topic/listaction', controllers.topic.index.listAction)
+router.get('/topic/detailaction', controllers.topic.index.detailAction)
+
 module.exports = router
