@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>draggable</title>
+    <style>
+        .left {
+            display: inline-block;
+            width: 400px;
+            height: 500px;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            margin-right: 30px;
+        }
+        .clothes {
+            background-image: url("./tshirt.jpg");
+            width: 100%;
+            height: 100%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .empty {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .empty img {
+            width: 100%;
+            height: 100%;
+        }
+        .right {
+            display: inline-block;
+            width: 180px;
+            height: 500px;
+            box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            padding: 20px;
+            overflow: scroll;
+        }
+        .right img {
+            width: 150px;
+            height: 150px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>拖动你喜欢的图案到衣服上</h1>
+    <div class="left">
+        <div class="clothes">
+            <div class="empty"></div>
+        </div>
+    </div>
+    <div class="right">
+        <img src="./bat.jpg" alt="bat" draggable="true">
+        <img src="./super.jpg" alt="super" draggable="true">
+        <img src="./iorn.jpg" alt="iron" draggable="true">
+        <img src="./mei.jpg" alt="mei" draggable="true">
+        <img src="./ge.jpeg" alt="ge" draggable="true">
+    </div>
+    <script src="./draggable.js"></script>
+</body>
+</html>

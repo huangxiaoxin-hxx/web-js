@@ -1,0 +1,9 @@
+# 拖动时
+    开始    dragstart
+    进行中  drag
+    结束    dragend
+# 进入区域
+    进入时  dragenter
+    进入后  dragover
+    离开    dragleave
+    放置    drop
