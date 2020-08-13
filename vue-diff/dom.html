@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+        <li class="item">aaaa</li>
+        <li class="item">bbbb</li>
+        <li class="item">cccc</li>
+    </ul>
+    <script>
+        // createElement('ul', { class: "list" }, [
+        //     createElement('li', {class: 'item'}, ['aaaa']),
+        //     createElement('li', {class: 'item'}, ['bbbb']),
+        //     createElement('li', {class: 'item'}, ['cccc']),
+        // ])
+        var dom = document.querySelector('.list')
+        dom.addEventListener('click', (e) => {
+            console.log(e)
+        })
+        console.log(dom)
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>
